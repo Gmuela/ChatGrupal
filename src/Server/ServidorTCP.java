@@ -9,9 +9,11 @@ import java.net.Socket;
 public class ServidorTCP extends Thread implements ClientInterface{
 
 	ServerSocket serverSocket;
+	Socket socket;
 	
-	public ServidorTCP() throws IOException{
+	public ServidorTCP(Socket socket) throws IOException{
 		serverSocket = new ServerSocket(PUERTO);
+		this.socket = socket;
 	}
 	
 	public void run(){
@@ -22,11 +24,10 @@ public class ServidorTCP extends Thread implements ClientInterface{
 		while(true){
 			try {
 				Socket socket = serverSocket.accept();
-				ServicioServidorTCP servicio = new ServicioServidorTCP(socket, "servicio"+i);
+				ReceptorCliente cliente = new ReceptorCliente(socket);
 				i++;
-				servicio.start();
+				cliente.start();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
