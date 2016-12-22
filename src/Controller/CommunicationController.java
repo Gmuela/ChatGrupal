@@ -28,5 +28,6 @@ public class CommunicationController {
     }
 
     public void recibirMensaje() {
+        this.chat.setText(this.chat.getText() +"\n" +clientReceiver.recibirRespuesta());
     }
 }
