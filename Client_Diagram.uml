@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="317.8472222222222" y="369.0">Controller.CommunicationController</node>
+    <node x="588.75" y="0.0">Model.ClientInterface</node>
+    <node x="0.0" y="358.0">Vista.ChatUI</node>
+    <node x="375.5" y="648.5">Controller.FactoryCommunicationController</node>
+    <node x="0.0" y="969.0">Vista.Login</node>
+    <node x="347.3472222222222" y="101.0">Model.ClientReceiver</node>
+    <node x="86.25" y="615.0">Controller.EventController</node>
+    <node x="730.8472222222222" y="134.0">Model.ClientTransmitter</node>
+    <node x="661.8472222222222" y="425.0">Model.FactoryClient</node>
+    <node x="70.75" y="828.0">Controller.FactoryEventController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Model.ClientReceiver" target="Model.ClientInterface">
+      <point x="0.0" y="-103.5" />
+      <point x="479.8472222222222" y="76.0" />
+      <point x="617.25" y="76.0" />
+      <point x="-28.5" y="25.5" />
+    </edge>
+    <edge source="Model.FactoryClient" target="Model.ClientReceiver">
+      <point x="-74.25" y="-36.5" />
+      <point x="736.0972222222222" y="328.0" />
+      <point x="568.1805555555555" y="328.0" />
+      <point x="88.33333333333331" y="103.5" />
+    </edge>
+    <edge source="Model.FactoryClient" target="Model.ClientTransmitter">
+      <point x="74.25" y="-36.5" />
+      <point x="51.25" y="70.5" />
+    </edge>
+    <edge source="Controller.FactoryCommunicationController" target="Controller.CommunicationController">
+      <point x="93.5" y="-48.0" />
+      <point x="656.0" y="590.0" />
+      <point x="587.8472222222222" y="590.0" />
+      <point x="108.0" y="92.5" />
+    </edge>
+    <edge source="Model.ClientTransmitter" target="Model.ClientInterface">
+      <point x="0.0" y="-70.5" />
+      <point x="833.3472222222222" y="76.0" />
+      <point x="674.25" y="76.0" />
+      <point x="28.5" y="25.5" />
+    </edge>
+    <edge source="Controller.EventController" target="Vista.ChatUI">
+      <point x="-57.25" y="-81.5" />
+      <point x="0.0" y="103.5" />
+    </edge>
+    <edge source="Controller.FactoryEventController" target="Controller.EventController">
+      <point x="-65.0" y="-48.0" />
+      <point x="135.75" y="803.0" />
+      <point x="143.5" y="803.0" />
+      <point x="-57.25" y="81.5" />
+    </edge>
+    <edge source="Controller.CommunicationController" target="Model.ClientReceiver">
+      <point x="-108.0" y="-92.5" />
+      <point x="371.8472222222222" y="338.0" />
+      <point x="391.51388888888886" y="338.0" />
+      <point x="-88.33333333333333" y="103.5" />
+    </edge>
+    <edge source="Controller.CommunicationController" target="Model.ClientTransmitter">
+      <point x="108.0" y="-92.5" />
+      <point x="587.8472222222222" y="338.0" />
+      <point x="782.0972222222222" y="338.0" />
+      <point x="-51.25" y="70.5" />
+    </edge>
+    <edge source="Controller.EventController" target="Controller.CommunicationController">
+      <point x="57.25" y="-81.5" />
+      <point x="258.0" y="590.0" />
+      <point x="371.8472222222222" y="590.0" />
+      <point x="-108.0" y="92.5" />
+    </edge>
+    <edge source="Model.ClientReceiver" target="Controller.CommunicationController">
+      <point x="0.0" y="103.5" />
+      <point x="0.0" y="-92.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.3289930555555556" x="479.50131926121367" y="686.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
