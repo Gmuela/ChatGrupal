@@ -16,6 +16,7 @@ public class CommunicationController {
     public CommunicationController(String host) {
         this.clientReceiver = FactoryClient.createClientReceiver(host);
         this.clientTransmitter = FactoryClient.createClientTransmitter(host);
+        clientReceiver.start();
     }
 
     public void initChat(JTextArea textAreaMensajes) {
@@ -27,7 +28,7 @@ public class CommunicationController {
         clientTransmitter.enviarMensaje(mensaje);
     }
 
-    public void recibirMensaje() {
-        this.chat.setText(this.chat.getText() +"\n" +clientReceiver.recibirRespuesta());
+    public void recibirMensaje(String mensaje) {
+        this.chat.setText(this.chat.getText() + mensaje);
     }
 }

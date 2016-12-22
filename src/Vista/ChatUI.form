@@ -42,7 +42,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Hola"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="14517" class="javax.swing.JButton" binding="buttonSend">

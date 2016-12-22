@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class EventController implements ActionListener{
+public class EventController implements ActionListener {
 
     private JTextField nick;
     private JTextField host;
@@ -27,16 +27,18 @@ public class EventController implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         JButton button = (JButton) e.getSource();
         String buttonName = button.getName();
-        if(buttonName.equalsIgnoreCase("login")){
+        if (buttonName.equalsIgnoreCase("login")) {
             FactoryCommunicationController.initController(this.host.getText());
             this.communicationController = FactoryCommunicationController.getController();
             new ChatUI().openChat();
+            this.communicationController.enviarMensaje("\n"+this.nick.getText() + " se ha conectado.\n");
             System.out.println("En la clase event controller----");
             System.out.println(nick.getText());
             System.out.println(host.getText());
-        } else if(buttonName.equalsIgnoreCase("send")){
-            String mensaje = this.nick.getText() + ": " + this.textToSend.getText();
+        } else if (buttonName.equalsIgnoreCase("send")) {
+            String mensaje = this.nick.getText() + ": " + this.textToSend.getText() + "\n";
             this.communicationController.enviarMensaje(mensaje);
+            this.textToSend.setText("");
         }
     }
 }
