@@ -22,7 +22,7 @@
             <constraints/>
             <properties>
               <editable value="false"/>
-              <text value="Paco: Hola\nGuille: Hola"/>
+              <text value="¡Bienvenido al chat! Respeta las normas."/>
             </properties>
           </component>
         </children>

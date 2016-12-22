@@ -22,6 +22,7 @@ public class ChatUI {
         CommunicationController controller = FactoryCommunicationController.getController();
         controller.initChat(this.textAreaMensajes);
         EventController eventController = FactoryEventController.getController();
+        eventController.initFieldsInChatUI(this.myText);
         this.buttonSend.addActionListener(eventController);
         this.buttonSend.setName("send");
     }

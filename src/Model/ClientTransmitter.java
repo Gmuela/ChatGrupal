@@ -23,6 +23,10 @@ public class ClientTransmitter implements ClientInterface {
     }
 
     public void enviarMensaje(String mensaje){
-
+        try {
+            this.flujoSalida.writeUTF(mensaje);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

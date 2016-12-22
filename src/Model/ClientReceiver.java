@@ -31,7 +31,7 @@ public class ClientReceiver extends Thread implements ClientInterface {
     }
 
     public String recibirRespuesta() {
-        return null;
+        return "Hola";
     }
 
     public void cerrar() {
