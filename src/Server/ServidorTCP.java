@@ -20,12 +20,11 @@ public class ServidorTCP extends Thread implements ClientInterface{
 		servir();
 	}
 	public void servir(){
-		int i=0;
+
 		while(true){
 			try {
 				Socket socket = serverSocket.accept();
 				ReceptorCliente cliente = new ReceptorCliente(socket);
-				i++;
 				cliente.start();
 			} catch (IOException e) {
 				e.printStackTrace();

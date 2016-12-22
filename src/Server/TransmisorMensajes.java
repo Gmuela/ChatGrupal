@@ -9,7 +9,6 @@ import java.util.ArrayList;
  */
 public class TransmisorMensajes {
 
-    DataInputStream flujoEntrada;
     DataOutputStream flujoSalida;
 
     private ArrayList<Mensaje> mensajes;
