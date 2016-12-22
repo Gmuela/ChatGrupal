@@ -1,6 +1,7 @@
 package Vista;
 
 import Controller.EventController;
+import Controller.FactoryCommunicationController;
 import Controller.FactoryEventController;
 
 import javax.swing.*;
@@ -8,14 +9,14 @@ import java.awt.*;
 
 public class Login {
     private JPanel loginChatGrupal;
-    private JTextField nick;
     private JTextField host;
+    private JTextField nick;
     private JButton loginButton;
 
     public Login() {
         FactoryEventController.initController();
         EventController eventController = FactoryEventController.getController();
-        eventController.initFields(this.nick,this.host);
+        eventController.initFieldsInLogin(this.host,this.nick);
         this.loginButton.addActionListener(eventController);
         this.loginButton.setName("login");
     }
