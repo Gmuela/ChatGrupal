@@ -39,7 +39,8 @@ public class ClientReceiver extends Thread implements ClientInterface {
             InputStream inputStream = this.socket.getInputStream();
             this.flujoEntrada = new DataInputStream(inputStream);
             String mensaje = this.flujoEntrada.readUTF();
-            FactoryCommunicationController.getController().recibirMensaje(mensaje);
+            CommunicationController communicationController = FactoryCommunicationController.getController();
+            communicationController.recibirMensaje(mensaje);
             System.out.println(mensaje);
         } catch (IOException e) {
             e.printStackTrace();
