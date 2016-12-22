@@ -24,7 +24,7 @@ public class ReceptorCliente extends Thread {
                 contestarRequest(request);
             }
         }catch (Exception e) {
-            System.err.println("Error en la conexion"+e.getMessage());
+            e.printStackTrace();
         }finally {
             cerrar();
         }
@@ -39,7 +39,7 @@ public class ReceptorCliente extends Thread {
                 dataOutputStream.writeUTF(mensaje);
             }
         }catch (IOException e) {
-            System.err.println("error al contestar"+e.getMessage());
+            e.printStackTrace();
         }
     }
     public String recibirRequest(){
@@ -56,6 +56,7 @@ public class ReceptorCliente extends Thread {
         try{
             socket.close();
         }catch (IOException e) {
-            System.err.println("Error al cerrar el socket tcp en cliente"+ e.getMessage());		}
+            e.printStackTrace();
+        }
     }
 }
