@@ -3,18 +3,18 @@ package Server;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class ReceptorCliente extends Thread {
 
-    DataInputStream flujoEntrada;
-    DataOutputStream flujoSalida;
-    Socket socket;
+    private DataInputStream flujoEntrada;
+    private Socket socket;
 
     public ReceptorCliente(Socket socket) throws IOException {
         this.socket = socket;
-        flujoEntrada = new DataInputStream( socket.getInputStream() );
-        flujoSalida = new DataOutputStream( socket.getOutputStream());
+        flujoEntrada = new DataInputStream(socket.getInputStream());
     }
 
     public void run(){
@@ -32,20 +32,25 @@ public class ReceptorCliente extends Thread {
     }
     public void contestarRequest(String mensaje){
         try{
-
-            flujoSalida.writeUTF(mensaje);
+            ArrayList<Socket> socketArrayList = ArraySockets.getSocketArrayList();
+            for (Socket thisSocket : socketArrayList) {
+                OutputStream outputStream = thisSocket.getOutputStream();
+                DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
+                dataOutputStream.writeUTF(mensaje);
+            }
         }catch (IOException e) {
             System.err.println("error al contestar"+e.getMessage());
         }
     }
     public String recibirRequest(){
+        String mensaje = null;
         try {
-            return flujoEntrada.readUTF();
+            mensaje = flujoEntrada.readUTF();
+
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return null;
+        return mensaje;
     }
     public void cerrar(){
         try{

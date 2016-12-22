@@ -21,7 +21,6 @@ public class CommunicationController {
 
     public void initChat(JTextArea textAreaMensajes) {
         this.chat = textAreaMensajes;
-        System.out.println(this.chat.getText());
     }
 
     public void enviarMensaje(String mensaje) {

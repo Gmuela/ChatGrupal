@@ -11,19 +11,30 @@ public class ServidorTCP extends Thread implements ClientInterface{
 	ServerSocket serverSocket;
 	Socket socket;
 	
-	public ServidorTCP(Socket socket) throws IOException{
-		serverSocket = new ServerSocket(PUERTO);
-		this.socket = socket;
+	public ServidorTCP(){
+		serverSocket = getServerSocket();
 	}
-	
+
+	private ServerSocket getServerSocket() {
+		ServerSocket serverSocket = null;
+		try {
+			 serverSocket = new ServerSocket(PUERTO);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return serverSocket;
+	}
+
 	public void run(){
 		servir();
 	}
-	public void servir(){
+	private void servir(){
 
 		while(true){
 			try {
-				Socket socket = serverSocket.accept();
+				socket = serverSocket.accept();
+				ArraySockets.addNewSocket(socket);
 				ReceptorCliente cliente = new ReceptorCliente(socket);
 				cliente.start();
 			} catch (IOException e) {

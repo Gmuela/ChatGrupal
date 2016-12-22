@@ -1,5 +1,6 @@
 package Controller;
 
+import Server.ServidorTCP;
 import Vista.ChatUI;
 
 import javax.swing.*;
@@ -28,13 +29,12 @@ public class EventController implements ActionListener {
         JButton button = (JButton) e.getSource();
         String buttonName = button.getName();
         if (buttonName.equalsIgnoreCase("login")) {
+            ServidorTCP server = new ServidorTCP();
+            server.start();
             FactoryCommunicationController.initController(this.host.getText());
             this.communicationController = FactoryCommunicationController.getController();
             new ChatUI().openChat();
             this.communicationController.enviarMensaje("\n"+this.nick.getText() + " se ha conectado.\n");
-            System.out.println("En la clase event controller----");
-            System.out.println(nick.getText());
-            System.out.println(host.getText());
         } else if (buttonName.equalsIgnoreCase("send")) {
             String mensaje = this.nick.getText() + ": " + this.textToSend.getText() + "\n";
             this.communicationController.enviarMensaje(mensaje);

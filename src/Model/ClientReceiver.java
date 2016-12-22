@@ -41,7 +41,6 @@ public class ClientReceiver extends Thread implements ClientInterface {
             String mensaje = this.flujoEntrada.readUTF();
             CommunicationController communicationController = FactoryCommunicationController.getController();
             communicationController.recibirMensaje(mensaje);
-            System.out.println(mensaje);
         } catch (IOException e) {
             e.printStackTrace();
         }
