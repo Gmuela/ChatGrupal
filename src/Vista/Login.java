@@ -22,15 +22,15 @@ public class Login {
     public void openLogin() {
         JFrame frame = new JFrame("JChat");
         JPanel loginChatGrupal = this.loginChatGrupal;
-
-        UtilView.setIcon(frame);
-        UtilView.setFrameSize(frame,300,150);
-        UtilView.setTextFieldSize(this.host, 100, 25);
-        UtilView.setTextFieldSize(this.nick, 100, 25);
-        UtilView.setButtonStyle(this.loginButton, 50, 30);
-        UtilView.setEnterAction(frame, this.loginButton);
-
         frame.setContentPane(loginChatGrupal);
+
+        StyleUtil.setIcon(frame);
+        StyleUtil.setFrameSize(frame,300,150);
+        StyleUtil.setTextFieldSize(this.host, 100, 25);
+        StyleUtil.setTextFieldSize(this.nick, 100, 25);
+        StyleUtil.setButtonStyle(this.loginButton, 50, 30);
+        StyleUtil.setEnterAction(frame, this.loginButton);
+
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();

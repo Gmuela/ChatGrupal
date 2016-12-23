@@ -29,20 +29,18 @@ public class ChatUI {
     public void openChat() {
         JFrame frame = new JFrame("JChat");
         JPanel general = this.chatGrupal;
-
-        UtilView.setIcon(frame);
-        UtilView.setFrameSize(frame, 450, 700);
-        UtilView.setTextFieldSize(this.myText, 100, 40);
-        UtilView.setButtonStyle(this.buttonSend, 100, 30);
-        UtilView.setEnterAction(frame, this.buttonSend);
-
-        UtilView.setAutoScroll(this.textAreaMensajes);
         frame.setContentPane(general);
+
+        StyleUtil.setIcon(frame);
+        StyleUtil.setFrameSize(frame, 450, 700);
+        StyleUtil.setTextFieldSize(this.myText, 100, 40);
+        StyleUtil.setButtonStyle(this.buttonSend, 100, 30);
+        StyleUtil.setEnterAction(frame, this.buttonSend);
+        StyleUtil.setAutoScroll(this.textAreaMensajes);
+
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }
-
-
 }

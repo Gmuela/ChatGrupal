@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
-public class UtilView {
+public class StyleUtil {
 
     public static final Color BACKGROUND_COLOR = new Color(255, 102, 0);
     public static final Color FOREGROUND_COLOR = Color.WHITE;
