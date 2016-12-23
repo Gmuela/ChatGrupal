@@ -33,7 +33,7 @@ public class ChatUI {
 
         StyleUtil.setIcon(frame);
         StyleUtil.setFrameSize(frame, 450, 700);
-        StyleUtil.setTextFieldSize(this.myText, 100, 40);
+        StyleUtil.setTextFieldSize(this.myText, 100, 30);
         StyleUtil.setButtonStyle(this.buttonSend, 100, 30);
         StyleUtil.setEnterAction(frame, this.buttonSend);
         StyleUtil.setAutoScroll(this.textAreaMensajes);

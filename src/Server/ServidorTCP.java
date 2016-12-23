@@ -29,6 +29,7 @@ public class ServidorTCP extends Thread implements ClientInterface{
 	public void run(){
 		servir();
 	}
+
 	private void servir(){
 
 		while(true){
